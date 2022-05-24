@@ -15,23 +15,25 @@ get_header(); ?>
         <article>
           
           <h2></h2>
-		  <p class="pris"></p>
+		      <p class="pris"></p>
           <p class="underoverskrift-1"></p>
           <p class="beskrivelse-1"></p>
           <p class="underoverskrift-2"></p>
           <p class="beskrivelse-2"></p>
           <p class="underoverskrift-3"></p>
           <p class="beskrivelse-3"></p>
-		  <img class="billede1" src="" alt="" />
-		  <video class="video1" src=""> </video>
+		      <img class="billede1" src="" alt="" />
+		      <video class="video1" src=""> </video>
           
         </article>
       </template>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+
       <nav id="filtrering"> <button data-produkt="alle">Alle produkter</button> </nav>
       <section class="produktcontainer" ></section>
+
 	  </main><!-- #main -->
 <script>
   let produkter;
@@ -82,8 +84,9 @@ function visProdukter() {
   container.innerHTML = "";
 
   produkter.forEach(produkt => {
-	  //loop igennem produkter
+	  
     if ( filterProdukt == "alle" || produkt.categories.includes(parseInt(filterProdukt))){
+      //klon template og indsæt data fra JSON
       let klon = temp.cloneNode(true).content;
       klon.querySelector("h2").textContent = produkt.title.rendered;
       klon.querySelector(".underoverskrift-1").textContent = produkt.underoverskriftet;
@@ -100,6 +103,7 @@ function visProdukter() {
         location.href = produkt.link;
         });
 
+      //viser det i dommen
       container.appendChild(klon);
     }
   });
