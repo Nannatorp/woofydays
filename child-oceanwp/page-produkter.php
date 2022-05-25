@@ -13,9 +13,10 @@ get_header(); ?>
 
 <template>
   <article>
+  <img class="billede1" src="" alt="" />
     <h2></h2>
     <p class="pris"></p>
-    <img class="billede1" src="" alt="" />
+    
   </article>
 </template>
 
@@ -86,19 +87,8 @@ get_header(); ?>
           //klon template og indsæt data fra JSON
           let klon = temp.cloneNode(true).content;
           klon.querySelector("h2").textContent = produkt.title.rendered;
-          klon.querySelector(".underoverskrift-1").textContent =
-            produkt.underoverskriftet;
-          klon.querySelector(".underoverskrift-2").textContent =
-            produkt.underoverskriftto;
-          klon.querySelector(".underoverskrift-3").textContent =
-            produkt.underoverskrifttre;
-          klon.querySelector(".beskrivelse-1").textContent =
-            produkt.beskrivelseet;
-          klon.querySelector(".beskrivelse-2").textContent =
-            produkt.beskrivelseto;
-          klon.querySelector(".beskrivelse-3").textContent =
-            produkt.beskrivelsetre;
-          klon.querySelector(".pris").textContent = produkt.pris;
+          klon.querySelector(".pris").textContent = produkt.pris + " kr.";
+          klon.querySelector("img").src = produkt.billede[0].guid;
 
           // gør man kan klikke på et produkt og den åbner singleview.
           // produkt.link tager fat i linket til singleview siden
