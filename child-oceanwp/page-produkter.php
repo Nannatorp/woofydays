@@ -15,15 +15,7 @@ get_header(); ?>
   <article>
     <h2></h2>
     <p class="pris"></p>
-    <p class="underoverskrift-1"></p>
-    <p class="beskrivelse-1"></p>
-    <p class="underoverskrift-2"></p>
-    <p class="beskrivelse-2"></p>
-    <p class="underoverskrift-3"></p>
-    <p class="beskrivelse-3"></p>
-    <div class="billedecontainer"></div>
     <img class="billede1" src="" alt="" />
-    <video class="video1" src=""></video>
   </article>
 </template>
 
@@ -107,15 +99,6 @@ get_header(); ?>
           klon.querySelector(".beskrivelse-3").textContent =
             produkt.beskrivelsetre;
           klon.querySelector(".pris").textContent = produkt.pris;
-
-          //et array af billder og det looper vi igennem  med en html streng vi kloner billede containeren
-          //og sætter en inner html på med img så den løber igennem billederne til der ikke er flere med forEach
-          produkt.billede.forEach((pic) => {
-            let img = `<img class="billede1" src="${pic.guid}" alt="" />`;
-            klon.querySelector(".billedecontainer").innerHTML += img;
-          });
-
-          klon.querySelector(".video1").src = produkt.video.guid;
 
           // gør man kan klikke på et produkt og den åbner singleview.
           // produkt.link tager fat i linket til singleview siden
