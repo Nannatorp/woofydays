@@ -30,6 +30,7 @@ get_header(); ?>
 
       let produkt;
 
+      //link til database med en php snippet med en function der gør vi kan få postens id.
       const url = "https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-json/wp/v2/produkt/"+<?php echo get_the_ID() ?>;
 
 
@@ -67,10 +68,7 @@ get_header(); ?>
            });
       }
       hentData();
-
-      document.querySelector("button").addEventListener("click", () => {
-     history.back();
-      });
+      
   </script>
 </div>
 <!-- #primary -->
