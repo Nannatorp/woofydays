@@ -117,6 +117,8 @@ get_header(); ?>
 
           klon.querySelector(".video1").src = produkt.video.guid;
 
+          // gør man kan klikke på et produkt og den åbner singleview.
+          // produkt.link tager fat i linket til singleview siden
           klon.querySelector("article").addEventListener("click", () => {
             location.href = produkt.link;
           });
