@@ -16,13 +16,13 @@ get_header(); ?>
     <article id="singleview">
       <div class="billedecontainer"></div>
       <h2></h2>
+      <p class="pris"></p>
       <p class="underoverskrift-1"></p>
       <p class="beskrivelse-1"></p>
       <p class="underoverskrift-2"></p>
       <p class="beskrivelse-2"></p>
       <p class="underoverskrift-3"></p>
       <p class="beskrivelse-3"></p>
-      <p class="pris"></p>
       <video class="video1" src=""></video>
     </article>
   </main>
@@ -44,8 +44,7 @@ get_header(); ?>
        console.log(produkt.billede.guid);
 
      document.querySelector("h2").textContent = produkt.title.rendered;
-     document.querySelector(".pris").textContent =
-       "Pris: " + produkt.pris + ",-";
+     document.querySelector(".pris").textContent = produkt.pris + " kr.";
     document.querySelector(".underoverskrift-1").textContent =
              produkt.underoverskriftet;
     document.querySelector(".underoverskrift-2").textContent =
