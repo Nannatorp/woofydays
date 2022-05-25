@@ -14,43 +14,64 @@ get_header(); ?>
 <div id="primary" class="content-area">
   <main id="main" class="site-main">
     <article id="singleview">
-      <img id="pic" src="" alt="" />
+      <div class="billedecontainer"></div>
       <h2></h2>
-      <p class="info"></p>
-      <p class="info_3"></p>
+      <p class="underoverskrift-1"></p>
+      <p class="beskrivelse-1"></p>
+      <p class="underoverskrift-2"></p>
+      <p class="beskrivelse-2"></p>
+      <p class="underoverskrift-3"></p>
+      <p class="beskrivelse-3"></p>
       <p class="pris"></p>
+      <video class="video1" src=""></video>
     </article>
   </main>
   <script>
 
-     let produkt;
+      let produkt;
 
-     const url = "https://nannatorp.dk/kea/09_cms/babushka_wp/wordpress/wp-json/wp/v2/produkt/"+<?php echo get_the_ID() ?>;
+      const url = "https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-json/wp/v2/produkt/"+<?php echo get_the_ID() ?>;
 
 
-     async function hentData() {
-    console.log("hentData");
+      async function hentData() {
+     console.log("hentData");
 
-    const data = await fetch(url);
-    produkt = await data.json();
-    visProdukter();
-     }
-     function visProdukter() {
-      console.log(produkt.billede.guid);
+     const data = await fetch(url);
+     produkt = await data.json();
+     visProdukter();
+      }
+      function visProdukter() {
+       console.log(produkt.billede.guid);
 
-      document.querySelector("#pic").src = produkt.billede.guid;
-    document.querySelector("h2").textContent = produkt.title.rendered;
-    document.querySelector(".info").textContent = produkt.beskrivelse;
-    document.querySelector(".info_3").textContent =
-      "Oprindelsesregion: " + produkt.oprindelsesregion;
-    document.querySelector(".pris").textContent =
-      "Pris: " + produkt.pris + ",-";
-     }
-     hentData();
+     document.querySelector("h2").textContent = produkt.title.rendered;
+     document.querySelector(".pris").textContent =
+       "Pris: " + produkt.pris + ",-";
+    document.querySelector(".underoverskrift-1").textContent =
+             produkt.underoverskriftet;
+    document.querySelector(".underoverskrift-2").textContent =
+             produkt.underoverskriftto;
+    document.querySelector(".underoverskrift-3").textContent =
+             produkt.underoverskrifttre;
+    document.querySelector(".beskrivelse-1").textContent =
+             produkt.beskrivelseet;
+    document.querySelector(".beskrivelse-2").textContent =
+             produkt.beskrivelseto;
+    document.querySelector(".beskrivelse-3").textContent =
+             produkt.beskrivelsetre;
+    document.querySelector(".video1").src = produkt.video.guid;
 
-     document.querySelector("button").addEventListener("click", () => {
-    history.back();
-     });
+           //et array af billder og det looper vi igennem  med en html streng vi kloner billede containeren
+           //og sætter en inner html på med img så den løber igennem billederne til der ikke er flere med forEach
+           produkt.billede.forEach((pic) => {
+             let img = `<img class="billede1" src="${pic.guid}" alt="" />`;
+             document.querySelector(".billedecontainer").innerHTML += img;
+           });
+      }
+      hentData();
+
+      document.querySelector("button").addEventListener("click", () => {
+     history.back();
+      });
   </script>
 </div>
 <!-- #primary -->
