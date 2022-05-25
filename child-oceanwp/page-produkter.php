@@ -22,10 +22,13 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
   <main id="main" class="site-main">
+
     <nav id="filtrering">
       <button data-produkt="alle">Alle produkter</button>
     </nav>
+
     <section class="produktcontainer"></section>
+     
   </main>
   <!-- #main -->
   <script>
@@ -40,10 +43,11 @@ get_header(); ?>
     const catUrl =
       "https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-json/wp/v2/categories";
 
-    // Henter data
+    // Henter data ind
     async function hentData() {
       const data = await fetch(dbUrl);
       const catdata = await fetch(catUrl);
+      //fylder data i variablerne
       produkter = await data.json();
       categories = await catdata.json();
       console.log(produkter);
@@ -51,6 +55,7 @@ get_header(); ?>
       opretKnapper();
     }
 
+    // function der opretter knapper med kategori id som data attribut  
     function opretKnapper() {
       categories.forEach((cat) => {
         document.querySelector(
@@ -59,12 +64,17 @@ get_header(); ?>
       });
       addEventListenersToButton();
     }
+
+// funcktion der laver en click eventListener til knapperne
+// kigger på alle de knapper som er sat ind i nav
+
     function addEventListenersToButton() {
       document.querySelectorAll("#filtrering button").forEach((elm) => {
         elm.addEventListener("click", filtrering);
       });
     }
 
+// function der filtrere kanpperne når der klikkes (this = det der er klikket på)
     function filtrering() {
       filterProdukt = this.dataset.produkt;
       console.log(filterProdukt);
@@ -76,10 +86,13 @@ get_header(); ?>
       console.log(visProdukter);
       let temp = document.querySelector("template");
       let container = document.querySelector(".produktcontainer");
-      //ryd container inden ny loop
+      
+      //ryd visings container inden ny loop/visning
       container.innerHTML = "";
 
       produkter.forEach((produkt) => {
+        //viser produkterne afhæning af hvilken knap der er trykket på
+        // parseInt gør det bliver lavet om til et tal
         if (
           filterProdukt == "alle" ||
           produkt.categories.includes(parseInt(filterProdukt))
