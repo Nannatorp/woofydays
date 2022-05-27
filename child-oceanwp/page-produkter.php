@@ -13,110 +13,110 @@ get_header(); ?>
 
 <template>
   <article>
-  <img class="billede1" src="" alt="" />
+    <img class="billede1" src="" alt="" />
     <h2></h2>
     <p class="pris"></p>
-    
   </article>
 </template>
 
-<div id="primary" class="content-area">
-  <main id="main" class="site-main">
+<div id="content" class="site-content clr">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main">
+      <nav id="filtrering">
+        <button data-produkt="alle">Alle produkter</button>
+      </nav>
 
-    <nav id="filtrering">
-      <button data-produkt="alle">Alle produkter</button>
-    </nav>
+      <section class="produktcontainer"></section>
+    </main>
+    <!-- #main -->
+    <script>
+      let produkter;
+      let categories;
+      let filterProdukt = "alle";
 
-    <section class="produktcontainer"></section>
-     
-  </main>
-  <!-- #main -->
-  <script>
-    let produkter;
-    let categories;
-    let filterProdukt = "alle";
+      // link til wp database alle produkter
+      const dbUrl =
+        "https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-json/wp/v2/produkt?per_page=100";
+      // link til wp database alle kategorier
+      const catUrl =
+        "https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-json/wp/v2/categories";
 
-    // link til wp database alle produkter
-    const dbUrl =
-      "https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-json/wp/v2/produkt?per_page=100";
-    // link til wp database alle kategorier
-    const catUrl =
-      "https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-json/wp/v2/categories";
+      // Henter data ind
+      async function hentData() {
+        const data = await fetch(dbUrl);
+        const catdata = await fetch(catUrl);
+        //fylder data i variablerne
+        produkter = await data.json();
+        categories = await catdata.json();
+        console.log(produkter);
+        visProdukter();
+        opretKnapper();
+      }
 
-    // Henter data ind
-    async function hentData() {
-      const data = await fetch(dbUrl);
-      const catdata = await fetch(catUrl);
-      //fylder data i variablerne
-      produkter = await data.json();
-      categories = await catdata.json();
-      console.log(produkter);
-      visProdukter();
-      opretKnapper();
-    }
+      // function der opretter knapper med kategori id som data attribut
+      function opretKnapper() {
+        categories.forEach((cat) => {
+          document.querySelector(
+            "#filtrering"
+          ).innerHTML += `<button class="filter" data-produkt="${cat.id}">${cat.name}</button>`;
+        });
+        addEventListenersToButton();
+      }
 
-    // function der opretter knapper med kategori id som data attribut  
-    function opretKnapper() {
-      categories.forEach((cat) => {
-        document.querySelector(
-          "#filtrering"
-        ).innerHTML += `<button class="filter" data-produkt="${cat.id}">${cat.name}</button>`;
-      });
-      addEventListenersToButton();
-    }
+      // funcktion der laver en click eventListener til knapperne
+      // kigger på alle de knapper som er sat ind i nav
 
-// funcktion der laver en click eventListener til knapperne
-// kigger på alle de knapper som er sat ind i nav
+      function addEventListenersToButton() {
+        document.querySelectorAll("#filtrering button").forEach((elm) => {
+          elm.addEventListener("click", filtrering);
+        });
+      }
 
-    function addEventListenersToButton() {
-      document.querySelectorAll("#filtrering button").forEach((elm) => {
-        elm.addEventListener("click", filtrering);
-      });
-    }
+      // function der filtrere kanpperne når der klikkes (this = det der er klikket på)
+      function filtrering() {
+        filterProdukt = this.dataset.produkt;
+        console.log(filterProdukt);
 
-// function der filtrere kanpperne når der klikkes (this = det der er klikket på)
-    function filtrering() {
-      filterProdukt = this.dataset.produkt;
-      console.log(filterProdukt);
+        visProdukter();
+      }
 
-      visProdukter();
-    }
+      function visProdukter() {
+        console.log(visProdukter);
+        let temp = document.querySelector("template");
+        let container = document.querySelector(".produktcontainer");
 
-    function visProdukter() {
-      console.log(visProdukter);
-      let temp = document.querySelector("template");
-      let container = document.querySelector(".produktcontainer");
-      
-      //ryd visings container inden ny loop/visning
-      container.innerHTML = "";
+        //ryd visings container inden ny loop/visning
+        container.innerHTML = "";
 
-      produkter.forEach((produkt) => {
-        //viser produkterne afhæning af hvilken knap der er trykket på
-        // parseInt gør det bliver lavet om til et tal
-        if (
-          filterProdukt == "alle" ||
-          produkt.categories.includes(parseInt(filterProdukt))
-        ) {
-          //klon template og indsæt data fra JSON
-          let klon = temp.cloneNode(true).content;
-          klon.querySelector("h2").textContent = produkt.title.rendered;
-          klon.querySelector(".pris").textContent = produkt.pris + " kr.";
-          klon.querySelector("img").src = produkt.billede[0].guid;
+        produkter.forEach((produkt) => {
+          //viser produkterne afhæning af hvilken knap der er trykket på
+          // parseInt gør det bliver lavet om til et tal
+          if (
+            filterProdukt == "alle" ||
+            produkt.categories.includes(parseInt(filterProdukt))
+          ) {
+            //klon template og indsæt data fra JSON
+            let klon = temp.cloneNode(true).content;
+            klon.querySelector("h2").textContent = produkt.title.rendered;
+            klon.querySelector(".pris").textContent = produkt.pris + " kr.";
+            klon.querySelector("img").src = produkt.billede[0].guid;
 
-          // gør man kan klikke på et produkt og den åbner singleview.
-          // produkt.link tager fat i linket til singleview siden
-          klon.querySelector("article").addEventListener("click", () => {
-            location.href = produkt.link;
-          });
+            // gør man kan klikke på et produkt og den åbner singleview.
+            // produkt.link tager fat i linket til singleview siden
+            klon.querySelector("article").addEventListener("click", () => {
+              location.href = produkt.link;
+            });
 
-          //viser det i dommen
-          container.appendChild(klon);
-        }
-      });
-    }
-    hentData();
-  </script>
+            //viser det i dommen
+            container.appendChild(klon);
+          }
+        });
+      }
+      hentData();
+    </script>
+  </div>
+  <!-- #primary -->
 </div>
-<!-- #primary -->
+<!-- #content -->
 
 <?php get_footer(); ?>
