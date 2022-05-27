@@ -23,6 +23,12 @@ get_header(); ?>
       <p class="beskrivelse-2"></p>
       <p class="underoverskrift-3"></p>
       <p class="beskrivelse-3"></p>
+      <p class="underoverskrift-4"></p>
+      <p class="beskrivelse-4"></p>
+      <p class="underoverskrift-5"></p>
+      <p class="beskrivelse-5"></p>
+      <p class="underoverskrift-6"></p>
+      <p class="beskrivelse-6"></p>
       <video class="video1" src=""></video>
     </article>
   </main>
@@ -52,12 +58,24 @@ get_header(); ?>
              produkt.underoverskriftto;
     document.querySelector(".underoverskrift-3").textContent =
              produkt.underoverskrifttre;
+    document.querySelector(".underoverskrift-4").textContent =
+             produkt.underoverskriftfire;
+    document.querySelector(".underoverskrift-5").textContent =
+             produkt.underoverskriftfem;
+    document.querySelector(".underoverskrift-6").textContent =
+             produkt.underoverskriftseks;
     document.querySelector(".beskrivelse-1").textContent =
              produkt.beskrivelseet;
     document.querySelector(".beskrivelse-2").textContent =
              produkt.beskrivelseto;
     document.querySelector(".beskrivelse-3").textContent =
              produkt.beskrivelsetre;
+    document.querySelector(".beskrivelse-4").textContent =
+             produkt.beskrivelsefire;
+    document.querySelector(".beskrivelse-5").textContent =
+             produkt.beskrivelsefem;
+    document.querySelector(".beskrivelse-6").textContent =
+             produkt.beskrivelseseks;
     document.querySelector(".video1").src = produkt.video.guid;
 
            //et array af billder og det looper vi igennem  med en html streng vi kloner billede containeren
