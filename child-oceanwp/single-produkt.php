@@ -15,8 +15,12 @@ get_header(); ?>
   <main id="main" class="site-main">
     <article id="singleview">
       <div class="billedecontainer"></div>
+      <video class="video1" src=""></video>
       <h2></h2>
       <p class="pris"></p>
+    </article>
+    <article id="singleview2">
+      <p class="produktbeskrivelse">Produktbeskrivelse</p>
       <p class="underoverskrift-1"></p>
       <p class="beskrivelse-1"></p>
       <p class="underoverskrift-2"></p>
@@ -29,7 +33,6 @@ get_header(); ?>
       <p class="beskrivelse-5"></p>
       <p class="underoverskrift-6"></p>
       <p class="beskrivelse-6"></p>
-      <video class="video1" src=""></video>
     </article>
   </main>
   <script>
@@ -86,7 +89,6 @@ get_header(); ?>
            });
       }
       hentData();
-      
   </script>
 </div>
 <!-- #primary -->
