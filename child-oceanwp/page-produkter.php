@@ -12,7 +12,7 @@
 get_header(); ?>
 
 <template>
-  <article>
+  <article id="produkt-article">
     <img class="billede1" src="" alt="" />
     <h2></h2>
     <p class="pris"></p>
