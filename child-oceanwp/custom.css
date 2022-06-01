@@ -5,8 +5,8 @@
 
 .produktcontainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  padding: 0px 40px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  margin: 0px 100px;
 }
 
 #produkt-article {
@@ -30,7 +30,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin: 50px 0px;
 }
 
 #filtrering button {
@@ -141,6 +141,11 @@
 /* ------ SINGLEVIEW SIDE SLUT -------- */
 
 /* ------ GENERELT -------- */
+.content-area {
+  border: none;
+  padding: 0px;
+}
+
 .wp-block-columns {
   margin-bottom: 0em;
 }
@@ -150,14 +155,17 @@
 .has-text-align-center {
   margin: 0px;
 }
+.wp-container-5 {
+  margin: 0px 100px;
+}
 .wp-container-6 {
-  grid-column-gap: 0px;
+  margin: 0px 100px;
 }
 h2.has-background {
   margin: 0px;
 }
 h1.has-background {
-  margin: 0px;
+  margin: 0px 100px;
   padding: 0px 0px 20px 0px;
 }
 .entry .alignfull {
@@ -190,5 +198,19 @@ a:focus {
   .page .entry .alignfull {
     margin-left: 0% !important;
   }
+  .produktcontainer {
+    margin: 0px 20px;
+  }
 }
 /* --------- MOBILE SLUT--------- */
+
+/* --------- DESKTOP --------- */
+/* fordi wp vil have det på den her måde */
+
+@media only screen and (min-width: 960px) {
+  .content-area,
+  .content-left-sidebar .content-area {
+    width: 100%;
+  }
+}
+/* --------- DESKTOP SLUT --------- */
