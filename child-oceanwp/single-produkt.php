@@ -81,10 +81,22 @@ get_header(); ?>
              produkt.beskrivelseseks;
     document.querySelector(".video1").src = produkt.video.guid;
 
+
+    let first_iteration = true;
+
            //et array af billder og det looper vi igennem  med en html streng vi kloner billede containeren
            //og sætter en inner html på med img så den løber igennem billederne til der ikke er flere med forEach
+           //hvis false tilføj classen billedeStor, hvis true tilføj ikke.
            produkt.billede.forEach((pic) => {
-             let img = `<img class="billede1" src="${pic.guid}" alt="" />`;
+            let img;
+             if (first_iteration) {
+                img = `<img class="billedeStor" src="${pic.guid}" alt="" />`;
+                console.log(img)
+                first_iteration = false;
+              }else{
+                img = `<img src="${pic.guid}" alt="" />`;
+               }
+
              document.querySelector(".billedecontainer").innerHTML += img;
            });
       }
