@@ -14,14 +14,17 @@ get_header(); ?>
 <template>
   <article id="produkt-article">
     <img class="billede1" src="" alt="" />
-    <h2></h2>
-    <p class="pris"></p>
+    <div class="produkt-info">
+      <h2></h2>
+      <p class="pris"></p>
+    </div>
   </article>
 </template>
 
 <div id="content" class="site-content clr">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
+      <!-- splashbillede -->
       <img
         class="wp-block-cover__image-background"
         alt=""
@@ -29,6 +32,7 @@ get_header(); ?>
         style="object-position: 50% 54%"
       />
 
+      <!-- produkter og knapper -->
       <h1 class="produkttitel">Produkter</h1>
 
       <nav id="filtrering">
@@ -37,6 +41,12 @@ get_header(); ?>
 
       <section class="produktcontainer"></section>
 
+      <!-- poter -->
+      <img
+        class="poter_lang"
+        src="https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-content/uploads/2022/05/paws_line3.svg"
+        alt="This image has an empty alt attribute; its file name is paws_line3.svg"
+      />
       <!-- footer -->
       <img
         class="wp-block-cover__image-background"
