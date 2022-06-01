@@ -8,7 +8,6 @@
 .produktcontainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  background-color: #f4c7b0;
   padding: 0px 40px;
 }
 
@@ -32,6 +31,7 @@ a:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 50px;
 }
 
 #filtrering button {
@@ -166,6 +166,14 @@ a:focus {
 .entry .alignfull {
   width: 0% !important;
 }
+
+/* Splashbillede/splashvideo */
+.wp-block-cover__image-background {
+  margin-bottom: 50px !important;
+}
+
+/* .wp-block-cover__video-background {
+} */
 
 /* --------- MOBILE --------- */
 @media screen and (max-width: 959px) {
