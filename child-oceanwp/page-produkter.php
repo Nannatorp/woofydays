@@ -22,12 +22,7 @@ get_header(); ?>
 <div id="content" class="site-content clr">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
-      <img
-        class="wp-block-cover__image-background"
-        alt="Bite me pink model"
-        src="https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-content/uploads/2022/05/Bitemepinkmodel.webp"
-        style="object-position: 50% 30%"
-      />
+    <img class="wp-block-cover__image-background" alt="" src="https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-content/uploads/2022/06/gåtur_crop-scaled.webp" style="object-position: 50% 54%;">
 
       <nav id="filtrering">
         <button data-produkt="alle">Alle produkter</button>
