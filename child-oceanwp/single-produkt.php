@@ -15,7 +15,6 @@ get_header(); ?>
   <main id="main" class="site-main">
     <article id="singleview">
       <div class="billedecontainer"></div>
-      <video class="video1" src=""></video>
       <h2></h2>
       <p class="pris"></p>
     </article>
@@ -34,6 +33,11 @@ get_header(); ?>
       <p class="underoverskrift-6"></p>
       <p class="beskrivelse-6"></p>
     </article>
+       <!-- poter -->
+       <img class="poter_lang"
+        src="https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-content/uploads/2022/05/paws_line3.svg"
+        alt="This image has an empty alt attribute; its file name is paws_line3.svg"
+      />
     <!-- footer -->
     <img
         class="wp-block-cover__image-background"
@@ -87,7 +91,6 @@ get_header(); ?>
              produkt.beskrivelsefem;
     document.querySelector(".beskrivelse-6").textContent =
              produkt.beskrivelseseks;
-    document.querySelector(".video1").src = produkt.video.guid;
 
 
     let first_iteration = true;
