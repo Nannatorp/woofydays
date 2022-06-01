@@ -33,11 +33,12 @@ get_header(); ?>
       />
 
       <!-- produkter og knapper -->
-      <h1 class="produkttitel">Produkter</h1>
 
       <nav id="filtrering">
         <button data-produkt="alle">Alle produkter</button>
       </nav>
+
+      <h1 class="produkttitel">Produkter</h1>
 
       <section class="produktcontainer"></section>
 
