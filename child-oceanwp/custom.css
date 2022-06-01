@@ -20,7 +20,12 @@
   font-weight: bold;
   font-size: 2rem;
 }
-
+.billede1 {
+  border: solid #f4c7b0;
+}
+.produkt-info {
+  border: solid #f4c7b0;
+}
 #filtrering {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +47,9 @@
 }
 #filtrering button:focus {
   background-color: #f4c7b0;
+}
+.poter_lang {
+  margin-bottom: 50px;
 }
 /* ------ PRODUKT SIDE SLUT -------- */
 
