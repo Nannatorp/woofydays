@@ -24,6 +24,8 @@ get_header(); ?>
     <main id="main" class="site-main">
     <img class="wp-block-cover__image-background" alt="" src="https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-content/uploads/2022/06/gåtur_crop-scaled.webp" style="object-position: 50% 54%;">
 
+    <h1>Produkter</h1>
+
       <nav id="filtrering">
         <button data-produkt="alle">Alle produkter</button>
       </nav>
@@ -35,6 +37,7 @@ get_header(); ?>
       let produkter;
       let categories;
       let filterProdukt = "alle";
+      let h1 = document.querySelector("h1");
 
       // link til wp database alle produkter
       const dbUrl =
@@ -78,6 +81,9 @@ get_header(); ?>
       function filtrering() {
         filterProdukt = this.dataset.produkt;
         console.log(filterProdukt);
+        
+      //skrifter overskriften
+        h1.textContent = this.textContent;
 
         visProdukter();
       }
