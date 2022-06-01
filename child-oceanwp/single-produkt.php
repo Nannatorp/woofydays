@@ -34,6 +34,14 @@ get_header(); ?>
       <p class="underoverskrift-6"></p>
       <p class="beskrivelse-6"></p>
     </article>
+    <!-- footer -->
+    <img
+        class="wp-block-cover__image-background"
+        alt="footer"
+        src="https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-content/uploads/2022/05/footer-1.svg"
+        style="object-position: 50% 100%"
+      />
+      <!-- footer slut -->
   </main>
   <script>
 
