@@ -25,7 +25,7 @@ get_header(); ?>
       <img
         class="wp-block-cover__image-background"
         alt=""
-        src="https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-content/uploads/2022/06/gåtur_crop-scaled.webp"
+        src="https://nannatorp.dk/kea/10_eksamensprojekt/woofydays/wp-content/uploads/2022/06/gåtur_v2-scaled.webp"
         style="object-position: 50% 54%"
       />
 
