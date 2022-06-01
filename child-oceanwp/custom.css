@@ -1,8 +1,5 @@
-.content-area {
-  border-right-width: 0px;
-  border-style: none;
-  padding: 0px;
-  margin: 20px;
+/* ------ PRODUKT SIDE -------- */
+.produkttitel {
 }
 
 .produktcontainer {
@@ -21,10 +18,6 @@
   padding: 10px 10px 0px 10px;
   font-weight: bold;
   font-size: 2rem;
-}
-
-a:focus {
-  border: none;
 }
 
 #filtrering {
@@ -49,7 +42,9 @@ a:focus {
 #filtrering button:focus {
   background-color: #f4c7b0;
 }
+/* ------ PRODUKT SIDE SLUT -------- */
 
+/* ------ SINGLEVIEW SIDE -------- */
 #singleview {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -134,17 +129,18 @@ a:focus {
   grid-column: 2/3;
   grid-row: 7/8;
 }
+/* ------ SINGLEVIEW SIDE SLUT -------- */
+
+/* ------ GENERELT -------- */
 .wp-block-columns {
   margin-bottom: 0em;
 }
 .wp-block-spacer {
   background-color: #fffbfa;
 }
-
 .has-text-align-center {
   margin: 0px;
 }
-
 .wp-container-6 {
   grid-column-gap: 0px;
 }
@@ -155,19 +151,22 @@ h1.has-background {
   margin: 0px;
   padding: 0px 0px 20px 0px;
 }
-
-#site-navigation-wrap .dropdown-menu > li > a {
-  font-weight: bold;
+.entry .alignfull {
+  width: 0% !important;
 }
 a:focus {
   outline: solid 0px !important;
 }
+/* ------ GENERELT SLUT-------- */
 
-.entry .alignfull {
-  width: 0% !important;
+/* ------ MENU -------- */
+#site-navigation-wrap .dropdown-menu > li > a {
+  font-weight: bold;
 }
 
-/* Splashbillede/splashvideo */
+/* ------ MENU SLUT-------- */
+
+/* -------- Splashbillede/splashvideo --------*/
 .wp-block-cover__image-background {
   margin-bottom: 50px !important;
 }
@@ -175,9 +174,12 @@ a:focus {
 /* .wp-block-cover__video-background {
 } */
 
+/* -------- Splashbillede/splashvideo SLUT --------*/
+
 /* --------- MOBILE --------- */
 @media screen and (max-width: 959px) {
   .page .entry .alignfull {
     margin-left: 0% !important;
   }
 }
+/* --------- MOBILE SLUT--------- */
