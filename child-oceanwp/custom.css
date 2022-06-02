@@ -141,14 +141,29 @@
 /* ------ SINGLEVIEW SIDE SLUT -------- */
 
 /* ------ GENERELT -------- */
+
 .content-area {
   border: none;
   padding: 0px;
 }
-
+/* .wp-block-button__link:active,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover,
+.wp-block-button__link:visited {
+  background-color: #f4c7b0;
+} */
 .wp-block-columns {
   margin-bottom: 0em;
 }
+.wp-block-image {
+  margin: 0px;
+}
+.wp-image-813,
+.wp-image-802,
+.wp-image-803 {
+  margin: 0px !important;
+}
+
 .wp-block-spacer {
   background-color: #fffbfa;
 }
@@ -161,8 +176,16 @@
 .wp-container-6 {
   margin: 0px 100px;
 }
+.wp-container-9,
+.wp-container-13 {
+  gap: 0px !important;
+}
+.wp-container-18 {
+  padding: 50px;
+}
 h2.has-background {
   margin: 0px;
+  padding: 0px;
 }
 h1.has-background {
   margin: 0px 100px;
@@ -177,6 +200,7 @@ a:focus {
 /* ------ GENERELT SLUT -------- */
 
 /* ------ FORSIDE --------- */
+
 .has-x-large-font-size {
   font-size: 90px !important;
   font-family: ohno-blazeface, sans-serif;
@@ -233,9 +257,9 @@ a:focus {
   .content-left-sidebar .content-area {
     width: 100%;
   }
-  body {
+  /* body {
     display: grid;
     grid-template-columns: 1fr minmax(0, 1200px) 1fr !important;
-  }
+  } */
 }
 /* --------- DESKTOP SLUT --------- */
