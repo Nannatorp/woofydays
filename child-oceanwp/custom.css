@@ -174,8 +174,29 @@ h1.has-background {
 a:focus {
   outline: solid 0px !important;
 }
-/* ------ GENERELT SLUT-------- */
+/* ------ GENERELT SLUT -------- */
 
+/* ------ FORSIDE --------- */
+.has-x-large-font-size {
+  font-size: 90px !important;
+  font-family: ohno-blazeface, sans-serif;
+  font-weight: 200;
+  margin: 100px 0px 0px 0px;
+}
+.has-large-font-size {
+  font-size: 90px !important;
+  font-family: ohno-blazeface, sans-serif;
+  font-weight: 200;
+  margin: 0px;
+}
+.has-medium-font-size {
+  font-size: 300px !important;
+  font-family: ohno-blazeface, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0px;
+}
+/* ------ FORSIDE SLUT  --------- */
 /* ------ MENU -------- */
 #site-navigation-wrap .dropdown-menu > li > a {
   font-weight: bold;
@@ -211,6 +232,10 @@ a:focus {
   .content-area,
   .content-left-sidebar .content-area {
     width: 100%;
+  }
+  body {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1200px) 1fr !important;
   }
 }
 /* --------- DESKTOP SLUT --------- */
