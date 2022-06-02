@@ -102,7 +102,6 @@ get_header(); ?>
             let img;
              if (first_iteration) {
                 img = `<img class="billedeStor" src="${pic.guid}" alt="" />`;
-                console.log(img)
                 first_iteration = false;
               }else{
                 img = `<img src="${pic.guid}" alt="" />`;
